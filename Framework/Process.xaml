@@ -113,7 +113,7 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="416,603" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="416,634" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -121,36 +121,23 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="354,181" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="시험결과집계\02_DT결합.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="시험결과집계\02_DT결합.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="transactiondata를 기준테이블로 하는 방법도 있음" DisplayName="시험결과집계\02_DT결합.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,184" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="시험결과집계\02_DT결합.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_기준">
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="in_dt_기준" />
-        </InArgument>
-        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="io_CurrentRow_input">
-          <VisualBasicReference x:TypeArguments="sd:DataRow" ExpressionText="in_TransactionItem" />
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_불합여부">
-          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="io_dt_불합여부" />
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:Int32" x:Key="io_total_국어">
-          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="io_total_국어" />
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:Int32" x:Key="io_pass_국어">
-          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="io_pass_국어" />
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:Int32" x:Key="io_total_영어">
-          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="io_total_영어" />
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:Int32" x:Key="io_pass_영어">
-          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="io_pass_영어" />
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:Int32" x:Key="io_total_수학">
-          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="io_total_수학" />
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:Int32" x:Key="io_pass_수학">
-          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="io_pass_수학" />
-        </InOutArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_기준">[in_dt_기준]</InArgument>
+        <InOutArgument x:TypeArguments="sd:DataRow" x:Key="io_CurrentRow_input">[in_TransactionItem]</InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_불합여부">[io_dt_불합여부]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:Int32" x:Key="io_total_국어">[io_total_국어]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:Int32" x:Key="io_pass_국어">[io_pass_국어]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:Int32" x:Key="io_total_영어">[io_total_영어]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:Int32" x:Key="io_pass_영어">[io_pass_영어]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:Int32" x:Key="io_total_수학">[io_total_수학]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:Int32" x:Key="io_pass_수학">[io_pass_수학]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
     <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="354,79" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
   </Sequence>
